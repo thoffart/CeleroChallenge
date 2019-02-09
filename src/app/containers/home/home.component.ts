@@ -11,7 +11,4 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() { }
 
-    testefuncao() {
-        console.log('teste');
-    }
 }
