@@ -1,3 +1,4 @@
+import { HomeModule } from './containers/home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
