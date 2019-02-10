@@ -1,0 +1,34 @@
+<div *ngIf="heroes">
+  <div *ngFor="let hero of heroes">
+    <div class="card">
+      <div class="row">
+        <div class="col-md-2">
+          <img
+            src="{{hero.thumbnail.path}}/standard_xlarge.{{hero.thumbnail.extension}}"
+            class="img-fluid"
+            style="height: 200px; width: 200px;"
+          />
+        </div>
+        <div class="col-md-10 text-center">
+          <div class="card-block px-2">
+            <h4 class="card-title">{{hero.name}}</h4>
+            <br />
+            <div *ngIf="!hero.description; else description" style="min-height: 90px">
+              <h3>SEM DESCRIÇÃO</h3>
+            </div>
+            <ng-template #description>
+            <p class="card-text" style="min-height: 80px">
+              {{hero.description}}
+            </p>
+          </ng-template>
+              <button class="btn btn-success" style="width: 50%;">
+                Escolher
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+</div>

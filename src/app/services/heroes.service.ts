@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class HeroesService {
     marvelUrl = 'https://gateway.marvel.com/v1/public/characters';
     constructor(private httpClient: HttpClient) { }
