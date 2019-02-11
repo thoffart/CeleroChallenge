@@ -1,0 +1,23 @@
+
+  td {
+    width: 200px;
+    height: 200px;
+  }
+  table {
+    margin: auto;
+  }
+  .verticalLines {
+    border-left: 0.1px dotted black;
+    border-right: 0.1px dotted black;
+  }
+  .horizontalLines {
+    border-top: 0.1px dotted black;
+    border-bottom: 0.1px dotted black;
+  }
+
+  @media (max-width: 767.98px) { 
+    td {
+        width: 100px;
+        height: 100px;
+      }
+   }

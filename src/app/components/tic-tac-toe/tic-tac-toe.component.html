@@ -1,0 +1,9 @@
+<table>
+  <tr *ngFor="let col of game.cells; let i = index">
+    <td
+      *ngFor="let lin of col; let j = index"
+      [ngClass]="{ verticalLines: j === 1,  horizontalLines: i === 1}"
+      (click)="updateCells(i, j)"
+    ></td>
+  </tr>
+</table>
