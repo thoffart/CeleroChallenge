@@ -1,17 +1,42 @@
 <div class="container">
   <div class="row">
     <div class="col text-center">
-      <app-search-heroes></app-search-heroes>
+      <div *ngIf="game.status === 'not started'">
+        <button
+          class="btn btn-success btn-lg btn-block"
+          style="margin-top: 20%"
+          (click)="game.status = 'choosing player 1'"
+        >
+          COMEÇAR
+        </button>
+      </div>
+      <div *ngIf="game.status === 'choosing player 1'">
+        <h4 style="color: yellowgreen">Player 1: Escolher herói</h4>
+        <br />
+        <app-search-heroes
+          (choosenHeroeEmitter)="updatePlayerHero($event)"
+        ></app-search-heroes>
+      </div>
+      <div *ngIf="game.status === 'choosing player 2'">
+        <h4 style="color: yellowgreen">Player 2: Escolher herói</h4>
+        <br />
+        <app-search-heroes
+          (choosenHeroeEmitter)="updatePlayerHero($event)"
+        ></app-search-heroes>
+      </div>
       <br />
       <br />
     </div>
   </div>
-  <div class="row" style="height: 40rem;">
+  <div class="row" style="height: 40rem;" *ngIf="game.status === ('playing' || 'winner' || 'draw')">
     <div class="col">
-      <div class="card border-light" style="height: 40rem;">
+      <div class="card border-light">
         <div class="card-body">
-          <h4 class="card-title">Jogar</h4>
-          <p class="card-text">Text</p>
+          <app-tic-tac-toe
+            [game]="game"
+            [player1]="player1"
+            [player2]="player2"
+          ></app-tic-tac-toe>
         </div>
       </div>
     </div>
