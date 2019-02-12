@@ -24,21 +24,32 @@
           (choosenHeroeEmitter)="updatePlayerHero($event)"
         ></app-search-heroes>
       </div>
-      <br />
-      <br />
-    </div>
-  </div>
-  <div class="row" style="height: 40rem;" *ngIf="game.status === ('playing' || 'winner' || 'draw')">
-    <div class="col">
-      <div class="card border-light">
-        <div class="card-body">
-          <app-tic-tac-toe
-            [game]="game"
-            [player1]="player1"
-            [player2]="player2"
-          ></app-tic-tac-toe>
+      <div
+        *ngIf="verifyDisplayGame()"
+      >
+        <app-scoreboard
+          [player1]="player1"
+          [player2]="player2"
+        ></app-scoreboard>
+        <div *ngIf="verifyDisplayTicTacToe()">
+          <div class="card border-light">
+            <div class="card-body">
+              <app-tic-tac-toe
+                [game]="game"
+                [player1]="player1"
+                [player2]="player2"
+                (gameEmitter)="updateGame($event)"
+              ></app-tic-tac-toe>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="verifyDisplayFinishedGame() ">
+          <app-finished-game [game]="game"></app-finished-game>
         </div>
       </div>
     </div>
   </div>
+  <br />
+  <br />
+  <br />
 </div>
