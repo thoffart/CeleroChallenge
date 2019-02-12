@@ -1,8 +1,8 @@
-import { Player } from './../../models/player.model';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import * as fromAnimations from './../../components/utils/animations/animations';
 @Component({
     selector: 'app-search-heroes',
+    animations: [fromAnimations.enterLeft('cardAnimation', 100)],
     templateUrl: 'search-heroes.component.html',
     styleUrls: ['search-heroes.component.scss']
 })

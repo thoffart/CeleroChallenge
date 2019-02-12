@@ -11,10 +11,12 @@ const routes: Routes = [
         {
           path: 'jogo',
           component: GameComponent,
+          data: {animation: 'Left'}
         },
         {
           path: 'ajuda',
           loadChildren: './help/help.module#HelpModule',
+          data: {animation: 'Right'}
         },
         {
           path: '**',

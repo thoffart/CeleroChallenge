@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col text-center">
-      <div *ngIf="game.status === 'not started'">
+      <div *ngIf="game.status === 'not started'" >
         <button
           class="btn btn-success btn-lg btn-block"
           style="margin-top: 20%"
@@ -10,14 +10,14 @@
           COMEÇAR
         </button>
       </div>
-      <div *ngIf="game.status === 'choosing player 1'">
+      <div *ngIf="game.status === 'choosing player 1'" [@componentAnimation]>
         <h4 style="color: yellowgreen">Player 1: Escolher herói</h4>
         <br />
         <app-search-heroes
           (choosenHeroeEmitter)="updatePlayerHero($event)"
         ></app-search-heroes>
       </div>
-      <div *ngIf="game.status === 'choosing player 2'">
+      <div *ngIf="game.status === 'choosing player 2'" [@componentAnimation]>
         <h4 style="color: yellowgreen">Player 2: Escolher herói</h4>
         <br />
         <app-search-heroes
@@ -26,6 +26,7 @@
       </div>
       <div
         *ngIf="verifyDisplayGame()"
+        [@componentAnimation]
       >
         <app-scoreboard
           [player1]="player1"
@@ -43,7 +44,7 @@
             </div>
           </div>
         </div>
-        <div *ngIf="verifyDisplayFinishedGame() ">
+        <div *ngIf="verifyDisplayFinishedGame() " [@componentAnimation]>
           <app-finished-game [game]="game"></app-finished-game>
         </div>
       </div>

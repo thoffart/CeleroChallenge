@@ -4,9 +4,10 @@ import { Player } from 'src/app/models/player.model';
 
 import { Game } from './../../../models/game.model';
 import { LocalStorageService } from './../../../services/local-storage.service';
-
+import * as fromAnimations from './../../../components/utils/animations/animations';
 @Component({
     selector: 'app-game',
+    animations: [fromAnimations.enterComponent('componentAnimation')],
     templateUrl: 'game.component.html',
     styleUrls: ['game.component.scss']
 })
