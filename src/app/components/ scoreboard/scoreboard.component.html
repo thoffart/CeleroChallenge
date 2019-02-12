@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="row">
+    <div class="col-md-2  text-center">
+      <img
+        src="{{ player1.hero.thumbnail.path }}/standard_xlarge.{{
+          player1.hero.thumbnail.extension
+        }}"
+        class="img-fluid"
+        style="height: 200px; width: 200px;"
+      />
+    </div>
+    <div class="col-md-3 text-center">
+      <div class="card-block">
+        <h6 class="card-title">PLAYER 1</h6>
+        <br />
+      </div>
+      <h5 class="card-text">
+       {{ player1.hero.name }}
+      </h5>
+      <br>
+    <h3> Marcador: {{player1.marker}}</h3>
+    </div>
+    <div class="col-md-2 text-center">
+      <div class="card-block px-2">
+        <br />
+      </div>
+      <h3 class="card-text" style="padding-top: 30px">
+        {{ player1.victories }} VS {{ player2.victories }}
+      </h3>
+    </div>
+    <div class="col-md-3 text-center">
+      <div class="card-block">
+        <h6 class="card-title">PLAYER 2</h6>
+        <br />
+      </div>
+      <h5 class="card-text">
+        {{ player2.hero.name }}
+      </h5>
+      <br>
+      <h3>Marcador: {{player2.marker}}</h3>
+    </div>
+    <div class="col-md-2 text-center">
+      <img
+        src="{{ player2.hero.thumbnail.path }}/standard_xlarge.{{
+          player2.hero.thumbnail.extension
+        }}"
+        class="img-fluid"
+        style="height: 200px; width: 200px;"
+      />
+    </div>
+  </div>
+</div>
+<br />
+<br />
