@@ -1,5 +1,9 @@
 import { animate, query, style, transition, trigger, state, keyframes, group, stagger } from '@angular/animations';
 
+
+/**
+ * Animation for the routes
+ */
 export const fadeIn =
   trigger('routeAnimations', [
     transition('* <=> *', [
@@ -18,6 +22,9 @@ export const fadeIn =
     ]),
 ]);
 
+/**
+ * Animation for the Components
+ */
 export function enterComponent(name: string) {
   return trigger(name, [
     state('void', style({ opacity: 0 })),
@@ -25,6 +32,9 @@ export function enterComponent(name: string) {
     ]);
 }
 
+/**
+ * Animation for the hero-cards
+ */
 export function enterLeft(name: string, time: number) {
   return trigger(name, [
     transition('void => *', [

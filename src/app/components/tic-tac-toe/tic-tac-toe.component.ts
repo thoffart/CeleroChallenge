@@ -24,10 +24,16 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
         }
      }
 
+/**
+ * emits the game to the parent component, so it can saves it in the local-storage before destroying it
+ */
      ngOnDestroy() {
         this.gameEmitter.emit(this.game);
      }
 
+/**
+ * initialize the game
+ */
     initializeGame() {
         this.game = {
             playerTurn: this.sortPlayerFirstTurn(),
@@ -41,6 +47,9 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
         };
     }
 
+/**
+ * sort the player who will start playing
+ */
     sortPlayerFirstTurn() {
         const initialPlayer = ((((Math.floor(Math.random() * 100) + 1)) % 2) === 0) ? this.player1 : this.player2;
         (initialPlayer === this.player1) ? this.player2.marker = 'O' : this.player1.marker = 'O';
@@ -48,6 +57,9 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
         return initialPlayer;
     }
 
+/**
+ * receive the cell that has been checked, check if a winner has occurred or there has been a tie
+ */
     updateCells(i: number, j: number) {
         if (!this.game.cells[i][j].marked) {
             this.game.movimentsNumber += 1;
@@ -68,12 +80,18 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
         }
     }
 
+/**
+ * change the player's turn
+ */
     changePlayerTurn() {
         (this.game.playerTurn.marker === this.player1.marker)
         ? (this.game.playerTurn = this.player2)
         : (this.game.playerTurn = this.player1);
     }
 
+/**
+ * verifies all possible conditions of victory and returns true if it happened
+ */
     verifyVictory(cells: Cell[][], playerMark: mark, markedCellX: number, markedCellY: number): boolean {
         if (this.checkColumn(cells, playerMark, markedCellX, markedCellY)) {
             return true;
@@ -88,6 +106,9 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
     }
 
 
+/**
+ * verifies if the entire cell line has the same mark('X' OR 'O')
+ */
     checkLine(cells: Cell[][], playerMark: mark, markedCellX: number, markedCellY: number): boolean {
         for (let i = 0; i < 3; i++) {
             if (!cells[markedCellX][i].marked || cells[markedCellX][i].playerMark !== playerMark) {
@@ -97,6 +118,9 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
         return true;
     }
 
+/**
+ * verifies if the entire cell column has the same mark('X' OR 'O')
+ */
     checkColumn(cells: Cell[][], playerMark: mark, markedCellX: number, markedCellY: number): boolean {
         for (let i = 0; i < 3; i++) {
             if (!cells[i][markedCellY].marked || cells[i][markedCellY].playerMark !== playerMark) {
@@ -106,6 +130,9 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
         return true;
     }
 
+/**
+ * verifies if the entire cell vertical has the same mark('X' OR 'O')
+ */
     checkVertical(cells: Cell[][], playerMark: mark, markedCellX: number, markedCellY: number): boolean {
         for (let i = 0; i < 3; i++) {
             if (!cells[i][i].marked || cells[i][i].playerMark !== playerMark) {
@@ -115,6 +142,9 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
         return true;
     }
 
+/**
+ * verifies if the entire cell anti vertical has the same mark('X' OR 'O')
+ */
     checkAntiVertical(cells: Cell[][], playerMark: mark, markedCellX: number, markedCellY: number): boolean {
         for (let i = 0; i < 3; i++) {
             if (!cells[i][2 - i].marked || cells[i][2 - i].playerMark !== playerMark) {

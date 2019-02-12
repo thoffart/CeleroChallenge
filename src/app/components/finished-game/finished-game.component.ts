@@ -15,10 +15,16 @@ export class FinishedGameComponent implements OnInit {
 
     ngOnInit() { }
 
+/**
+ * Set the game status to initialized
+ */
     playAgain() {
         this.game.status = 'initialized';
     }
 
+/**
+ * Set the game status to not started
+ */
     resetGame() {
         this.game.status = 'not started';
     }

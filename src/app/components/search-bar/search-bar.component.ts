@@ -16,6 +16,9 @@ export class SearchBarComponent implements OnInit {
     @Output() searchingEmitter: EventEmitter<boolean> = new EventEmitter();
     constructor(private heroesService: HeroesService, private fb: FormBuilder) { }
 
+/**
+ * create the form with formBuilder
+ */
     ngOnInit() {
         this.searchForm = this.fb.group({
             heroName: new FormControl('', [Validators.required]),
@@ -23,6 +26,9 @@ export class SearchBarComponent implements OnInit {
         this.onFormValueChanges();
     }
 
+/**
+ * Check for changes in the form values ​​and realize an api search through heroService
+ */
     onFormValueChanges() {
         this.searchForm.valueChanges.pipe(
             debounceTime(500),
@@ -39,6 +45,9 @@ export class SearchBarComponent implements OnInit {
         });
     }
 
+/**
+ * Verify if the length of the typed name is greater than one to perform the search
+ */
     private notHasLenght = (heroName: string): void => {
         if (heroName.length < 1)  {
             this.searchingEmitter.emit(false);
@@ -46,6 +55,9 @@ export class SearchBarComponent implements OnInit {
         }
     }
 
+/**
+ * informs the parent component that the search is being performed
+ */
     private startSearching = (): void => {
         this.searchingEmitter.emit(true);
         this.heroesEmitter.emit(null);

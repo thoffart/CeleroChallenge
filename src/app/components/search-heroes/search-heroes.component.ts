@@ -15,10 +15,16 @@ export class SearchHeroesComponent implements OnInit {
 
     ngOnInit() { }
 
+/**
+ * receives from the child component the heroes
+ */
     updateHeroes($heroes: any) {
         this.heroes = $heroes;
     }
 
+/**
+ * receives from the child component if the search is being perform
+ */
     updateSearching($searching: boolean) {
         this.searching = $searching;
     }

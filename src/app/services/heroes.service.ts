@@ -9,6 +9,9 @@ export class HeroesService {
     marvelUrl = 'https://gateway.marvel.com/v1/public/characters';
     constructor(private httpClient: HttpClient) { }
 
+/**
+ * Receives the data from the marvel api
+ */
     getHeroes(heroName: string): Observable<any> {
         const ts = new Date().toDateString();
         const stringToHash = `${ts}${config.marvel.privateKey}${config.marvel.publicKey}`;
@@ -19,6 +22,9 @@ export class HeroesService {
         return this.httpClient.get(this.marvelUrl, options);
     }
 
+/**
+ * Return the headers to solve the cors problem 
+ */
     private allowCors = (): HttpHeaders => {
         return new HttpHeaders(
             {
@@ -28,6 +34,9 @@ export class HeroesService {
         );
     }
 
+/**
+ * Return the params for the api make the search
+ */
     private setGetHeroesParams = (timeStamp: string, stringToHash: string, heroName: string): HttpParams => {
         return new HttpParams()
             .set('apikey', config.marvel.publicKey)
