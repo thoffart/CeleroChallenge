@@ -3,5 +3,6 @@ export type gameStatus =
   | 'winner'
   | 'playing'
   | 'not started'
+  | 'initialized'
   | 'choosing player 1'
   | 'choosing player 2';
