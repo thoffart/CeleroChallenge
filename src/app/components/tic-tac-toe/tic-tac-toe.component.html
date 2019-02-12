@@ -4,6 +4,15 @@
       *ngFor="let lin of col; let j = index"
       [ngClass]="{ verticalLines: j === 1,  horizontalLines: i === 1}"
       (click)="updateCells(i, j)"
-    ></td>
+    >
+    <div *ngIf="this.game.cells[i][j].marked">
+      <div *ngIf="this.game.cells[i][j].playerMark === 'X'; else O">
+        <h1>X</h1>
+      </div>
+      <ng-template #O>
+        <h1>O</h1>
+      </ng-template>
+    </div>
+  </td>
   </tr>
 </table>
