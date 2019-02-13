@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchBarComponent } from './search-bar.component';
 
 @NgModule({
-    imports: [CommonModule, FormsModule, ReactiveFormsModule, CardHeroesModule],
+    imports: [CommonModule, FormsModule, ReactiveFormsModule],
     exports: [SearchBarComponent],
     declarations: [SearchBarComponent],
     providers: [HeroesService],

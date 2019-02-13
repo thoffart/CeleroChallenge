@@ -9,11 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class FinishedGameComponent implements OnInit {
     @Input() game: Game;
-    @Input() player1: Player;
-    @Input() player2: Player;
+
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        console.log(this.game);
+     }
 
 /**
  * Set the game status to initialized
