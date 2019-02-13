@@ -1,5 +1,4 @@
-import { Player } from './../../models/player.model';
-import { Game } from './../../models/game.model';
+import { Game } from './../../../../models/game.model';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

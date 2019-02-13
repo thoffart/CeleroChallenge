@@ -1,8 +1,8 @@
-import { HeroesService } from './../../services/heroes.service';
 import { CommonModule } from '@angular/common';
-import { CardHeroesModule } from './../card-heroes/card-heroes.module';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { HeroesService } from './../../../../services/heroes.service';
 import { SearchBarComponent } from './search-bar.component';
 
 @NgModule({

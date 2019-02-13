@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { mark } from 'src/app/components/utils/types/mark';
+import { Cell } from 'src/app/models/cell.model';
+import { Game } from 'src/app/models/game.model';
 
-import { mark } from '../utils/types/mark';
-import { Cell } from './../../models/cell.model';
-import { Game } from './../../models/game.model';
-import { Player } from './../../models/player.model';
+import { Player } from './../../../../models/player.model';
 
 @Component({
     selector: 'app-tic-tac-toe',

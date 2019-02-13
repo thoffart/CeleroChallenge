@@ -1,5 +1,4 @@
 import { HelpModule } from './help/help.module';
-import { HelpComponent } from './help/help.component';
 import { GameModule } from './game/game.module';
 import { NgModule } from '@angular/core';
 

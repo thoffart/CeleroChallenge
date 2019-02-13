@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import * as fromAnimations from './../../components/utils/animations/animations';
+import * as fromAnimations from './../../../../components/utils/animations/animations';
 @Component({
     selector: 'app-search-heroes',
     animations: [fromAnimations.enterLeft('cardAnimation', 100)],
