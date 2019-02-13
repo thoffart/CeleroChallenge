@@ -1,27 +1,47 @@
-# CeleroCase
+# CeleroChallenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+Projeto de desenvolvimento de um jogo da velha utilizando a [API](https://developer.marvel.com) fornecida pela Marvel.
 
-## Development server
+## Quick start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone o repositório:
 
-## Code scaffolding
+```bash
+git clone https://github.com/thoffart/CeleroChallenge.git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+cd CeleroChallenge
+```
 
-## Build
+Crie um arquivo config.ts na seguinte pasta `src/app/config/` com suas [chaves](https://developer.marvel.com/account) de API da marvel da seguinte maneira:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+export const config = {
+    marvel: {
+        publicKey: 'YOUR_PUBLIC_KEY',
+        privateKey: 'YOUR_PRIVATE_KEY'
+    }
+};
 
-## Running unit tests
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Após isso rode o projeto:
 
-## Running end-to-end tests
+```bash
+npm start
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Tests
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Para rodar os testes:
+
+```bash
+npm run test
+```
+
+## Documentation
+
+Para a documentação foi utilizado o [Compodoc](https://compodoc.app/). Rode:
+```bash
+npm run compodoc
+```
