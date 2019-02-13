@@ -4,19 +4,18 @@
         <div class="col-md-2">
           <img
             src="{{hero.thumbnail.path}}/standard_xlarge.{{hero.thumbnail.extension}}"
-            class="img-fluid"
-            style="height: 200px; width: 200px;"
+            class="img-fluid character-image"
           />
         </div>
         <div class="col-md-10 text-center">
           <div class="card-block px-2">
             <h4 class="card-title">{{hero.name}}</h4>
             <br />
-            <div *ngIf="!hero.description; else description" style="min-height: 90px">
+            <div *ngIf="!hero.description; else description" class="description">
               <h3>SEM DESCRIÇÃO</h3>
             </div>
-            <ng-template #description>
-            <p class="card-text" style="min-height: 80px">
+            <ng-template #description class="">
+            <p class="card-text description">
               {{hero.description}}
             </p>
           </ng-template>

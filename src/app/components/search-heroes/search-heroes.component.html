@@ -12,6 +12,7 @@
     <div [@cardAnimation]='heroes.length'>
     <div *ngFor="let hero of heroes" >
       <app-card-heroes 
+        class="card-hero"
         [hero]="hero"
         (click)="choosenHeroeEmitter.emit(hero)"
       ></app-card-heroes>
