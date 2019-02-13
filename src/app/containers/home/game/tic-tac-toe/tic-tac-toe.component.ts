@@ -97,9 +97,9 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
             return true;
         } else if (this.checkLine(cells, playerMark, markedCellX, markedCellY)) {
             return true;
-        } else if ((markedCellX === markedCellY) && this.checkVertical(cells, playerMark, markedCellX, markedCellY)) {
+        } else if ((markedCellX === markedCellY) && this.checkDiagonal(cells, playerMark, markedCellX, markedCellY)) {
             return true;
-        } else if (((markedCellX + markedCellY) === 2) && this.checkAntiVertical(cells, playerMark, markedCellX, markedCellY)) {
+        } else if (((markedCellX + markedCellY) === 2) && this.checkAntiDiagonal(cells, playerMark, markedCellX, markedCellY)) {
             return true;
         }
         return false;
@@ -131,9 +131,9 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
     }
 
 /**
- * verifies if the entire cell vertical has the same mark('X' OR 'O')
+ * verifies if the entire cell diagonal has the same mark('X' OR 'O')
  */
-    checkVertical(cells: Cell[][], playerMark: mark, markedCellX: number, markedCellY: number): boolean {
+    checkDiagonal(cells: Cell[][], playerMark: mark, markedCellX: number, markedCellY: number): boolean {
         for (let i = 0; i < 3; i++) {
             if (!cells[i][i].marked || cells[i][i].playerMark !== playerMark) {
                 return false;
@@ -143,9 +143,9 @@ export class TicTacToeComponent implements OnInit, OnDestroy  {
     }
 
 /**
- * verifies if the entire cell anti vertical has the same mark('X' OR 'O')
+ * verifies if the entire cell anti diagonal has the same mark('X' OR 'O')
  */
-    checkAntiVertical(cells: Cell[][], playerMark: mark, markedCellX: number, markedCellY: number): boolean {
+    checkAntiDiagonal(cells: Cell[][], playerMark: mark, markedCellX: number, markedCellY: number): boolean {
         for (let i = 0; i < 3; i++) {
             if (!cells[i][2 - i].marked || cells[i][2 - i].playerMark !== playerMark) {
                 return false;
