@@ -30,21 +30,25 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="celerocase">CeleroCase</h1>
-<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 7.3.1.</p>
-<h2 id="development-server">Development server</h2>
-<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
-<h2 id="code-scaffolding">Code scaffolding</h2>
-<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
-<h2 id="build">Build</h2>
-<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build.</p>
-<h2 id="running-unit-tests">Running unit tests</h2>
-<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
-<h2 id="running-end-to-end-tests">Running end-to-end tests</h2>
-<p>Run <code>ng e2e</code> to execute the end-to-end tests via <a href="http://www.protractortest.org/">Protractor</a>.</p>
-<h2 id="further-help">Further help</h2>
-<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://github.com/angular/angular-cli/blob/master/README.md">Angular CLI README</a>.</p>
+<h1 id="celerochallenge">CeleroChallenge</h1>
+<p>Projeto de desenvolvimento de um jogo da velha utilizando a <a href="https://developer.marvel.com">API</a> fornecida pela Marvel.</p>
+<h2 id="quick-start">Quick start</h2>
+<p>Clone o repositório:</p>
+<div><pre class="line-numbers"><code class="language-bash">git clone https://github.com/thoffart/CeleroChallenge.git
 
+cd CeleroChallenge</code></pre></div><p>Crie um arquivo config.ts na seguinte pasta <code>src/app/config/</code> com suas <a href="https://developer.marvel.com/account">chaves</a> de API da marvel da seguinte maneira:</p>
+<div><pre class="line-numbers"><code class="language-bash">export const config = {
+    marvel: {
+        publicKey: &#39;YOUR_PUBLIC_KEY&#39;,
+        privateKey: &#39;YOUR_PRIVATE_KEY&#39;
+    }
+};
+</code></pre></div><p>Após isso rode o projeto:</p>
+<div><pre class="line-numbers"><code class="language-bash">npm start</code></pre></div><h2 id="tests">Tests</h2>
+<p>Para rodar os testes:</p>
+<div><pre class="line-numbers"><code class="language-bash">npm run test</code></pre></div><h2 id="documentation">Documentation</h2>
+<p>Para a documentação foi utilizado o <a href="https://compodoc.app/">Compodoc</a>. Rode:</p>
+<div><pre class="line-numbers"><code class="language-bash">npm run compodoc</code></pre></div>
 
 
 
